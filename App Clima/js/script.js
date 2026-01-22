@@ -1,4 +1,4 @@
-const apiKey = '025eff398ad103ce342660214288e386'
+const apiKey = 'VBjmr+d3$9=X,Qf'
 
 
 
@@ -13,16 +13,6 @@ function buscarClima() {
 
 
     const url = 'https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br';
-
-    fetch(url)
-        .then(resposta => resposta.json())
-        .then(dados => {
-            console.log(dados)
-        })
-
-        .catch(erro => {
-            console.error("Erro:", erro)
-        })
 
     alert(url);
 }

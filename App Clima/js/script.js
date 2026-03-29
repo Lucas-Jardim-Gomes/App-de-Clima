@@ -4,7 +4,6 @@ async function buscarClima() {
     const cidade = document.getElementById('cidade').value;
     const resultado = document.getElementById("resultado")
 
-
     // Controle de erro para campo vazio
 
     if (cidade.trim() === '') {

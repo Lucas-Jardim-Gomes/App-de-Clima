@@ -13,35 +13,27 @@ async function buscarClima() {
     }
 
     try {
-        const resposta = await fetch('https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br')
+       const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
-
-
-try {
     // Faz a requisição para a API de clima
         const resposta = await fetch(url)
     // Transforma a resposta em objeto
         const dados = await resposta.json()
 
+
         if (dados.cod === "404" || dados.cod === 404) {
-            resultado.innerHTML = "Cidade não encontrada"
-            return
+            resultado.innerHTML = "Cidade não encontrada";
+            return;
         }
 
-
+    //  Sucesso
      resultado.innerHTML = `
             <h2>${dados.name}</h2>
             <p>🌡️ ${dados.main.temp}°C</p>
             <p>☁️ ${dados.weather[0].description}</p>
-        `
+        `;
     } catch (erro) {
-        resultado.innerHTML = "Erro ao buscar dados"
+        resultado.innerHTML = "Erro ao buscar dados";
+        console.error(erro);
     }
-
-
-    
-
-    alert(url);
-}
 }

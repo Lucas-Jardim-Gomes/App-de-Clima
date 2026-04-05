@@ -14,16 +14,27 @@
         <h1>App Clima</h1>
     
 
+        <!-- Tela de busca para o usuário digitar o nome da cidade e buscar o clima -->
+<div id="tela-busca">
+
     <input type="text"
     id="cidade"
      placeholder="Digite o nome da sua cidade">
 
      <button onclick="buscarClima()">Buscar Clima</button>
+</div>
 
-     </main>
+
+<div id="tela-resultado">
 
      <div id="resultado">
      </div>
+     <button onclick="voltar()">Voltar</button>
+
+</div>
+     </main>
+
+    
      <footer>
          <p>&copy; App Clima criado por Lucas Gomes. Todos os direitos reservados.</p>
      </footer>

@@ -3,22 +3,43 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+
+
+:root {
+    --cor0: #87CEEB;
+    --cor1: #1E90FF;
+    --cor2: #FFD166;
+    --cor3: #F5F7FA;
+    --cor4: #333333;
+    --cor5: #1E1E2F;
+    --cor6: #2A2A40;
+    --cor7: #4FC3F7;
+    --cor8: #E0E0E0;
+    --fonte0: Arial, Helvetica , sans-serif;
+    --fonte1: 'Bebas Neue', cursive ;
+    --fonte2: 'Caveat', cursive ;
+}
+
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    background: var(--cor3);
 
 }
 
 main
  { 
-    height: 400px;
+    height: 450px;
     min-height: 200px;
     width: 90%;
-    max-width: 400px;
-    background: rgb(127,255,212); 
+    max-width: 800px;
+    background: var(--cor0); 
     text-align: center ;
     border-radius: 8px;
 
@@ -28,6 +49,31 @@ main
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Caveat', cursive;
+}
+
+input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background: var(--cor7);
+    color: var(--cor3);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 footer {

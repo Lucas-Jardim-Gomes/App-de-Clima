@@ -1,9 +1,9 @@
-
 async function buscarClima() {
 
 // Pega o que o usuário digitou
     const cidade = document.getElementById("cidade").value;
-    const resultado = document.getElementById("tela-resultado")
+    document.getElementById("btn-voltar").style.display = "block";
+   
 
     // Controle de erro para campo vazio
 
@@ -36,6 +36,7 @@ async function buscarClima() {
         // Esconde a tela de busca e mostra a tela de resultado
         document.getElementById("tela-busca").style.display = "none";
         document.getElementById("tela-resultado").style.display = "block";
+        
 
     } catch (erro) {
         resultado.innerHTML = "Erro ao buscar dados";
@@ -44,7 +45,9 @@ async function buscarClima() {
 }
 
 // Função para voltar para a tela de busca
-function voltar() {
+function voltar(onclick="voltar()") {
     document.getElementById("tela-busca").style.display = "block";
     document.getElementById("tela-resultado").style.display = "none";
+    document.getElementById("btn-voltar").style.display = "block";
+
 }

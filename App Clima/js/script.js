@@ -32,6 +32,7 @@ async function buscarClima() {
             <p>🌡️ ${dados.main.temp}°C</p>
             <p>☁️ ${dados.weather[0].description}</p>
         `;
+ 
 
         // Esconde a tela de busca e mostra a tela de resultado
         document.getElementById("tela-busca").style.display = "none";
@@ -45,9 +46,9 @@ async function buscarClima() {
 }
 
 // Função para voltar para a tela de busca
-function voltar(onclick="voltar()") {
+function voltar "voltar()" {
     document.getElementById("tela-busca").style.display = "block";
     document.getElementById("tela-resultado").style.display = "none";
-    document.getElementById("btn-voltar").style.display = "block";
+    document.getElementById("btn-voltar").style.display = "none";
 
 }

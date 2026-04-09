@@ -31,6 +31,8 @@ async function buscarClima() {
             <h2>${dados.name}</h2>
             <p>🌡️ ${dados.main.temp}°C</p>
             <p>☁️ ${dados.weather[0].description}</p>
+            <p>💧 ${dados.main.humidity}%</p>
+            <p>💨 ${dados.wind.speed} m/s</p>
         `;
  
 

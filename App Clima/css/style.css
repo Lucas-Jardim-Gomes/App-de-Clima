@@ -79,6 +79,11 @@ button {
     cursor: pointer;
 }
 
+#btn-voltar {
+    background: var(--cor7);
+    margin-top: 10px;
+    margin: auto;
+}
 footer {
     width: 100%;
     padding: 10px;

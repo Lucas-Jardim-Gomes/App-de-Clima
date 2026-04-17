@@ -12,12 +12,12 @@
     --cor0: #87CEEB;
     --cor1: #1E90FF;
     --cor2: #FFD166;
-    --cor3: #F5F7FA;
+    --cor3: #eaeaea;
     --cor4: #333333;
     --cor5: #1E1E2F;
     --cor6: #2A2A40;
     --cor7: #4FC3F7;
-    --cor8: #E0E0E0;
+    --cor8: #cacaca;
     --fonte0: Arial, Helvetica , sans-serif;
     --fonte1: 'Bebas Neue', cursive ;
     --fonte2: 'Caveat', cursive ;
@@ -29,7 +29,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    background: var(--cor3);
+    background: linear-gradient(var(--cor0), var(--cor3));
+    
 
 }
 
@@ -42,10 +43,19 @@ img {
 }
 
 h1 {
-    color: #fff;
     margin-bottom: 20px;
     font-family: 'Caveat', cursive;
     
+}
+.tempo {
+    color: var(--cor5);
+    font-size: 1.5em;
+    margin-right: 0px;
+}
+.agora {
+    color: var(--cor1);
+    font-size: 1.5em;
+    margin-left: 0px;
 }
 
 main
@@ -54,16 +64,14 @@ main
     min-height: 200px;
     width: 90%;
     max-width: 800px;
-    background: var(--cor0); 
+    background: var(--cor3); 
     text-align: center ;
     border-radius: 8px;
-
-
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: var(--cor1) 0px 0px 10px;
 }
 
 
@@ -75,17 +83,21 @@ input {
     border: none;
     border-radius: 4px;
     font-size: 16px;
+    box-shadow: 0 0 2px var(--cor7);
 }
 
 button {
     padding: 10px 20px;
-    background: var(--cor7);
+    background: var(--cor1);
     color: var(--cor3);
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    width: 30%;
 }
+
+
 
 footer {
     width: 100%;
@@ -94,3 +106,5 @@ footer {
     height: 60px;
     text-align: center;
 }
+
+/* Estilos para tela de resultado */

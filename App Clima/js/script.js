@@ -13,8 +13,8 @@ async function buscarClima() {
 
     try {
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
 
+    
 
     // Faz a requisição para a API de clima
         const resposta = await fetch(url)

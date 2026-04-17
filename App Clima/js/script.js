@@ -31,6 +31,8 @@ async function buscarClima() {
             <h2>${dados.name}</h2>
             <p>🌡️ ${dados.main.temp}°C</p>
             <p>☁️ ${dados.weather[0].description}</p>
+            <p>💧 ${dados.main.humidity}%</p>
+            <p>💨 ${dados.wind.speed} m/s</p>
         `;
  
 
@@ -46,7 +48,7 @@ async function buscarClima() {
 }
 
 // Função para voltar para a tela de busca
-function voltar "voltar()" {
+function voltar() {
     document.getElementById("tela-busca").style.display = "block";
     document.getElementById("tela-resultado").style.display = "none";
     document.getElementById("btn-voltar").style.display = "none";

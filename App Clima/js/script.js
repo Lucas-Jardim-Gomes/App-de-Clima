@@ -13,7 +13,6 @@ async function buscarClima() {
     }
 
     try {
-
        const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
 
     // Faz a requisição para a API de clima
@@ -27,6 +26,7 @@ async function buscarClima() {
             return;
         }
 
+    //  Sucesso
      resultado.innerHTML = `
             <h2>${dados.name}</h2>
             <p>🌡️ ${dados.main.temp}°C</p>
@@ -53,4 +53,4 @@ function voltar() {
     document.getElementById("tela-resultado").style.display = "none";
     document.getElementById("btn-voltar").style.display = "none";
 
-
+}

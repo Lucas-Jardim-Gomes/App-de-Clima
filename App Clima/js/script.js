@@ -37,7 +37,7 @@ async function buscarClima() {
  
 
         // Esconde a tela de busca e mostra a tela de resultado
-        document.getElementById("tela-busca").style.display = "none";
+        document.getElementById("tela-home").style.display = "none";
         document.getElementById("tela-resultado").style.display = "block";
         
 
@@ -49,8 +49,14 @@ async function buscarClima() {
 
 // Função para voltar para a tela de busca
 function voltar() {
-    document.getElementById("tela-busca").style.display = "block";
+    document.getElementById("tela-home").style.display = "block";
     document.getElementById("tela-resultado").style.display = "none";
     document.getElementById("btn-voltar").style.display = "none";
 
+}
+
+
+// escolher a tela que ira aparecer 
+function mostrarTela() {
+    document.querySelectorAll("section")
 }

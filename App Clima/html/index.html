@@ -19,24 +19,29 @@
         
     
 
-        <!-- Tela de busca para o usuário digitar o nome da cidade e buscar o clima -->
-<div id="tela-busca">
+       <!-- Tela de busca para o usuário digitar o nome da cidade e buscar o clima -->
+<section id="tela-home">
 
     <input type="text"
     id="cidade"
      placeholder="Digite o nome da sua cidade">
 
      <button onclick="buscarClima()">Buscar Clima</button>
-</div>
+</section>
 
+    <!-- Tela de carregamento para mostrar enquanto os dados estão sendo buscados da API -->
+<section id="carregamento" class="escondido">
 
-<div id="tela-resultado">
+</section>
+
+    <!-- Tela de resultado para mostrar o clima da cidade buscada -->
+<section id="tela-resultado" class="escondido">
 
      <div id="resultado">
      </div>
      <button id="btn-voltar" onclick="voltar()">Voltar</button>
 
-</div>
+</section>
      </main>
 
     

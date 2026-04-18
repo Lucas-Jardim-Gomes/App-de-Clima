@@ -114,4 +114,7 @@ footer {
     text-align: center;
 }
 
-/* Estilos para tela de resultado */
+/* Esconder telas */
+.escondido {
+    display: none;
+}

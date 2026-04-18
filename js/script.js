@@ -57,6 +57,15 @@ function voltar() {
 
 
 // escolher a tela que ira aparecer 
-function mostrarTela() {
-    document.querySelectorAll("section")
+function trocarTela(nomeDaTela) {
+    const telas = document.querySelectorAll("section");
+
+    // Esconde Todas as telas
+    telas.forEach( function(tela) {
+        tela.classList.add("hidden");
+    });
+
+    // Mostra a tela selecionada
+    const telaSelecionada = document.getElementById("nomeDaTela");
+    telaSelecionada.classList.remove("hidden");
 }

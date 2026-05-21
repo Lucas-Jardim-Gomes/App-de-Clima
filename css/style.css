@@ -77,16 +77,22 @@ main
     box-shadow: var(--cor1) 0px 0px 10px;
 }
 
-
+#tela-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
 
 input {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     box-shadow: 0 0 2px var(--cor7);
+
 }
 
 button {

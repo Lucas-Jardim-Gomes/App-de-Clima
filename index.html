@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script src="config/config.js"></script>
-    <script src="js/script.js"></script>
-    
     <main>
         <h1>
-            <img src="img/2.png" alt="">
+            <img src="img/2.png" alt=" Ícone de clima">
             <span class="tempo">Tempo</span>
             <span class="agora">Agora</span>
         </h1>
@@ -26,29 +23,29 @@
     id="cidade"
      placeholder="Digite o nome da sua cidade">
 
-     <button onclick="buscarClima()">Buscar Clima</button>
+     <button type="button" onclick="buscarClima()">Buscar Clima</button>
 </section>
 
     <!-- Tela de carregamento para mostrar enquanto os dados estão sendo buscados da API -->
-<section id="carregamento" class="escondido">
-
+<section id="tela-carregamento" class="escondido">
+    <div class="carregando">
+        <p>Buscando o clima... ☁️</p>
+    </div>
 </section>
 
     <!-- Tela de resultado para mostrar o clima da cidade buscada -->
 <section id="tela-resultado" class="escondido">
-
-     <div id="resultado">
-     </div>
-     <button id="btn-voltar" onclick="voltar()">Voltar</button>
-
+     <div id="resultado"></div>
+     <button id="btn-voltar" type="button" onclick="voltar()">Voltar</button>
 </section>
      </main>
 
     
      <footer>
-         <p>&copy; 2026 Lucas • ClimaJá • Projeto de estudo com API.</p>
+         <p>&copy; 2026 Lucas • TempoAgora • Projeto de estudo com API.</p>
      </footer>
 
-
+    <script src="config/config.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,73 +1,77 @@
-async function buscarClima() {
+const resultado = document.getElementById("resultado");
+const telaHome = document.getElementById("tela-home");
+const telaCarregamento = document.getElementById("tela-carregamento");
+const telaResultado = document.getElementById("tela-resultado");
+const botaoVoltar = document.getElementById("btn-voltar");
 
-// Pega o que o usuário digitou
+async function buscarClima() {
     const cidade = document.getElementById("cidade").value;
-    document.getElementById("btn-voltar").style.display = "block";
-   
 
     // Controle de erro para campo vazio
-
     if (cidade.trim() === '') {
         alert('Por favor, digite o nome de uma cidade.');
         return
     }
 
     try {
-       const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
+        mostrarTela('tela-carregamento');
+        botaoVoltar.style.display = "none";
 
-    // Faz a requisição para a API de clima
-        const resposta = await fetch(url)
-    // Transforma a resposta em objeto
-        const dados = await resposta.json()
+        const resposta = await fetch(url);
+        const dados = await resposta.json();
 
-
-        if (dados.cod === "404" || dados.cod === 404) {
+        if (!resposta.ok) {
             resultado.innerHTML = "Cidade não encontrada";
+            mostrarTela('tela-resultado');
             return;
         }
 
-    //  Sucesso
-     resultado.innerHTML = `
-     <div class="resultado-clima">
+        resultado.innerHTML = `
+        <div class="resultado-clima">
             <h2>${dados.name}</h2>
-            <p> Temperatura: 🌡️ ${dados.main.temp}°C</p>
-            <p> Condição: ☁️ ${dados.weather[0].description}</p>
-            <p> Umidade: 💧 ${dados.main.humidity}%</p>
-            <p> Velocidade do vento: 💨 ${dados.wind.speed} m/s</p>
+            <p>Temperatura: 🌡️ ${dados.main.temp.toFixed(1)}°C</p>
+            <p>Condição: ☁️ ${dados.weather[0].description}</p>
+            <p>Umidade: 💧 ${dados.main.humidity}%</p>
+            <p>Velocidade do vento: 💨 ${dados.wind.speed} m/s</p>
         </div>
         `;
- 
 
-        // Esconde a tela de busca e mostra a tela de resultado
-        document.getElementById("tela-home").style.display = "none";
-        document.getElementById("tela-resultado").style.display = "block";
-        
-
+        botaoVoltar.style.display = "inline-block";
+        mostrarTela('tela-resultado');
     } catch (erro) {
         resultado.innerHTML = "Erro ao buscar dados";
         console.error(erro);
+        mostrarTela('tela-resultado');
     }
 }
 
-// Função para voltar para a tela de busca
 function voltar() {
-    document.getElementById("tela-home").style.display = "block";
-    document.getElementById("tela-resultado").style.display = "none";
-    document.getElementById("btn-voltar").style.display = "none";
-
+    mostrarTela('tela-home');
+    botaoVoltar.style.display = "none";
 }
 
+function mostrarTela(nomeDaTela) {
+    [telaHome, telaCarregamento, telaResultado].forEach(function(tela) {
+        tela.classList.add("hidden");
+        tela.classList.remove("escondido");
+    });
 
-// escolher a tela que ira aparecer 
+    const telaSelecionada = document.getElementById(nomeDaTela);
+    if (telaSelecionada) {
+        telaSelecionada.classList.remove("hidden");
+        telaSelecionada.classList.remove("escondido");
+    }
+}
+
 function trocarTela(nomeDaTela) {
     const telas = document.querySelectorAll("section");
-
-    // Esconde Todas as telas
-    telas.forEach( function(tela) {
+    telas.forEach(function(tela) {
         tela.classList.add("hidden");
     });
 
-    // Mostra a tela selecionada
-    const telaSelecionada = document.getElementById("nomeDaTela");
-    telaSelecionada.classList.remove("hidden");
+    const telaSelecionada = document.getElementById(nomeDaTela);
+    if (telaSelecionada) {
+        telaSelecionada.classList.remove("hidden");
+    }
 }

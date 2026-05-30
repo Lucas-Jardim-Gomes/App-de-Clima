@@ -7,23 +7,25 @@
     display: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    --cor0: #87CEEB;
-    --cor1: #1E90FF;
-    --cor2: #FFD166;
-    --cor3: #eaeaea;
-    --cor4: #333333;
-    --cor5: #1E1E2F;
-    --cor6: #2A2A40;
-    --cor7: #4FC3F7;
-    --cor8: #cacaca;
-    --fonte0: Arial, Helvetica , sans-serif;
-    --fonte1: 'Bebas Neue', cursive ;
-    --fonte2: 'Caveat', cursive ;
+    --cor0: #0c2f55;
+    --cor1: #1368d2;
+    --cor2: #73d0f5;
+    --cor3: #eef6ff;
+    --cor4: #f8fbff;
+    --cor5: #13223c;
+    --cor6: #1f4f9c;
+    --cor7: #6cc1ff;
+    --cor8: #8e9dbf;
+    --font0: 'Inter', Arial, Helvetica, sans-serif;
+    --font1: 'Caveat', cursive;
+}
+
+html,
+body {
+    min-height: 100%;
 }
 
 body {
@@ -31,50 +33,77 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    background: linear-gradient(var(--cor0), var(--cor3));
-    
-
+    align-items: center;
+    padding: 24px;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 20%),
+        radial-gradient(circle at bottom right, rgba(79, 195, 247, 0.25), transparent 18%),
+        linear-gradient(180deg, #0e3163 0%, #14417f 48%, #3a7bd5 100%);
 }
 
-img {
-    width: 150px;
-    height: 140px;
-    margin: auto;
+::selection {
+    background: rgba(19, 98, 210, 0.25);
+}
+
+main {
+    width: min(100%, 820px);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 30px;
+    box-shadow: 0 28px 80px rgba(6, 22, 57, 0.25);
+    padding: 32px 28px;
     display: flex;
     justify-content: center;
 
 }
 
 h1 {
-    margin-bottom: 5px;
-    font-family: 'Caveat', cursive;
-    
+    font-family: var(--font1);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--cor5);
 }
+
+img {
+    width: 130px;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+header {
+    width: 100%;
+}
+
+.tempo,
+.agora {
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
 .tempo {
     color: var(--cor5);
     font-size: 1.2em;
 }
+
 .agora {
     color: var(--cor1);
     font-size: 1.2em;
-    margin-left: 0px;
 }
 
-main
- { 
-    height: 450px;
-    min-height: 200px;
-    width: 90%;
-    max-width: 800px;
-    /*background: var(--cor3); */
-    text-align: center ;
-    border-radius: 8px;
+section {
+    width: 100%;
+}
+
+#tela-home,
+#tela-resultado,
+#tela-carregamento {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    box-shadow: var(--cor5) 0px 0px 10px;
+    gap: 18px;
 }
 
 #tela-home {
@@ -86,49 +115,124 @@ main
 
 input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    box-shadow: 0 0 2px var(--cor7);
+    max-width: 520px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    border: 1px solid rgba(19, 104, 210, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+    font-size: 1rem;
+    color: var(--cor5);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
 
+input:focus {
+    outline: none;
+    border-color: var(--cor1);
+    box-shadow: 0 0 0 4px rgba(19, 104, 210, 0.12);
+    transform: translateY(-1px);
 }
 
 button {
-    padding: 10px 20px;
-    background: var(--cor1);
-    color: var(--cor3);
+    width: min(240px, 100%);
+    padding: 14px 24px;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--cor1), var(--cor7));
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    width: 30%;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 
-
-/* Estilo para a tela de resultados */
-.resultado-clima {
-    text-align: justify;
-    font-size: 20px;
-    font-family: var(--fonte1), bold;
-    padding-bottom: 5px;
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(19, 104, 210, 0.2);
 }
+
+button:active {
+    transform: translateY(0);
+}
+
 #btn-voltar {
-    padding: 5px;
-    background: var(--cor7);
-    margin: auto;
+    display: none;
+    padding: 12px 20px;
+    background: rgba(79, 195, 247, 0.16);
+    color: var(--cor5);
+    border: 1px solid rgba(79, 195, 247, 0.35);
+    width: auto;
+    min-width: 160px;
+}
+
+.carregando {
+    min-height: 140px;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px dashed rgba(19, 104, 210, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carregando p {
+    font-size: 1.05rem;
+    color: var(--cor5);
+}
+
+.resultado-clima {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 26px;
+    padding: 28px 26px;
+    box-shadow: 0 20px 40px rgba(32, 71, 133, 0.08);
+    text-align: left;
+    color: var(--cor5);
+}
+
+.resultado-clima h2 {
+    margin-bottom: 16px;
+    font-size: 2rem;
+}
+
+.resultado-clima p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 footer {
     width: 100%;
-    padding: 10px;
-    align-items: center;
-    height: 60px;
     text-align: center;
+    padding-top: 14px;
+    color: rgba(19, 34, 64, 0.7);
+    font-size: 0.95rem;
 }
 
-/* Esconder telas */
 .escondido {
-    display: none;
+    display: none !important;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 18px;
+    }
+
+    main {
+        padding: 24px 18px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    button,
+    input,
+    .carregando,
+    .resultado-clima {
+        max-width: 100%;
+    }
 }

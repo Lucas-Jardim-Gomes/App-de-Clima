@@ -16,6 +16,7 @@ async function buscarClima() {
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
         mostrarTela('tela-carregamento');
+   
         botaoVoltar.style.display = "none";
 
         const resposta = await fetch(url);
@@ -53,25 +54,13 @@ function voltar() {
 
 function mostrarTela(nomeDaTela) {
     [telaHome, telaCarregamento, telaResultado].forEach(function(tela) {
-        tela.classList.add("hidden");
-        tela.classList.remove("escondido");
+        tela.classList.add("escondido");
+    
     });
 
     const telaSelecionada = document.getElementById(nomeDaTela);
     if (telaSelecionada) {
-        telaSelecionada.classList.remove("hidden");
         telaSelecionada.classList.remove("escondido");
-    }
-}
-
-function trocarTela(nomeDaTela) {
-    const telas = document.querySelectorAll("section");
-    telas.forEach(function(tela) {
-        tela.classList.add("hidden");
-    });
-
-    const telaSelecionada = document.getElementById(nomeDaTela);
-    if (telaSelecionada) {
-        telaSelecionada.classList.remove("hidden");
+        
     }
 }

@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-#btn-voltar {
-    display: none;
-}
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@400;500;600;700&display=swap');
+
 
 :root {
     --cor0: #0c2f55;
@@ -19,7 +19,7 @@
     --cor6: #1f4f9c;
     --cor7: #6cc1ff;
     --cor8: #8e9dbf;
-    --font0: 'Inter', Arial, Helvetica, sans-serif;
+    --font0: 'Russo One', Arial, Helvetica, sans-serif;
     --font1: 'Caveat', cursive;
 }
 
@@ -96,9 +96,7 @@ section {
     width: 100%;
 }
 
-#tela-home,
-#tela-resultado,
-#tela-carregamento {
+#tela-home, #tela-resultado, #tela-carregamento {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -230,9 +228,7 @@ footer {
     }
 
     button,
-    input,
-    .carregando,
-    .resultado-clima {
+    input, .carregando, .resultado-clima {
         max-width: 100%;
     }
 }

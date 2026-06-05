@@ -17,14 +17,16 @@ O projeto também inclui tratamento de erros, garantindo que entradas inválidas
 - Exibir os resultados de forma clara na tela
 - Exibir mensagens de erro em caso de problemas
 - Controlar a troca de telas entre busca e resultado
--  Adicionar loading
--  Botão de modo escuro
+- Tela de loading
 
 ## 🛠 Tecnologias
 - HTML, CSS e JavaScript puro
 - API de previsão do tempo (ex: OpenWeatherMap)
 - Manipulação do DOM
 - Async/Await para requisições assíncronas
+
+## 📸 Preview
+![Screenshot do App Clima](assets/tela-home-clima.png)
 
 ## 💻 Instalação
 Para rodar o projeto localmente:
@@ -34,7 +36,10 @@ Para rodar o projeto localmente:
 git clone https://github.com/Lucas-Jardim-Gomes/App-de-Clima
 
 # entre na pasta do projeto
-cd App Clima
+cd App-de-Clima
+
 
 # abra o arquivo index.html no navegador
 # ou use um servidor local como Live Server
+```
+

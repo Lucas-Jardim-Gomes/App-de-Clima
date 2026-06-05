@@ -61,6 +61,7 @@ h1 {
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.05;
     letter-spacing: 0.01em;
+    text-align: center;
     color: var(--cor5);
 }
 
@@ -69,6 +70,8 @@ img {
     height: auto;
     display: block;
     margin: 0 auto 12px;
+    tansition: transform 0.2s ease, filter 0.2s ease;
+    
 }
 
 header {
@@ -100,6 +103,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 18px;
 }
 

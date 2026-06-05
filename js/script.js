@@ -39,6 +39,7 @@ async function buscarClima() {
         `;
 
         botaoVoltar.style.display = "inline-block";
+        logo.style.display = "none";
         mostrarTela('tela-resultado');
     } catch (erro) {
         resultado.innerHTML = "Erro ao buscar dados";
@@ -50,6 +51,7 @@ async function buscarClima() {
 function voltar() {
     mostrarTela('tela-home');
     botaoVoltar.style.display = "none";
+    logo.style.display = "";
 }
 
 function mostrarTela(nomeDaTela) {

@@ -4,6 +4,9 @@ const telaCarregamento = document.getElementById("tela-carregamento");
 const telaResultado = document.getElementById("tela-resultado");
 const botaoVoltar = document.getElementById("btn-voltar");
 
+function alternarModoEscuro() {
+    document.body.classList.toggle("modo-escuro");
+}
 async function buscarClima() {
     const cidade = document.getElementById("cidade").value;
 

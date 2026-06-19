@@ -29,7 +29,7 @@
 
 body.modo-escuro {
     --cor0: #0a0f1a;
-    --cor1: #3b82f6;
+    --cor1: #294d88;
     --cor6: #1e3a8a;
     --cor7: #2563eb;
 
@@ -43,15 +43,20 @@ body.modo-escuro {
     position: fixed;
     top: 16px;
     right: 16px;
-    z-index: 1000;
-    padding: 10px 16px;
-    background: rgba(79, 195, 247, 0.16);
+    padding: 8px 16px;
+    background: var(--cor4);
     color: var(--cor5);
-    border: 1px solid rgba(79, 195, 247, 0.35);
+    border: var(--cor8) 1px solid;
     border-radius: 999px;
     font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#btn-modo-escuro:hover {
+    background: var(--cor1);
+    filter: brightness(1.1);
 }
 
 html,
@@ -101,7 +106,7 @@ img {
     height: auto;
     display: block;
     margin: 0 auto 12px;
-    tansition: transform 0.2s ease, filter 0.2s ease;
+    transition: transform 0.2s ease, filter 0.2s ease;
     
 }
 
@@ -190,7 +195,7 @@ button:active {
 #btn-voltar {
     display: none;
     padding: 12px 20px;
-    background: rgba(79, 195, 247, 0.16);
+    background: var(--cor4);
     color: var(--cor5);
     border: 1px solid rgba(79, 195, 247, 0.35);
     width: auto;
@@ -217,7 +222,7 @@ button:active {
 .resultado-clima {
     width: 100%;
     max-width: 520px;
-    background: var(--cor4);
+    background: var(--cor3);
     border-radius: 26px;
     padding: 28px 26px;
     box-shadow: 0 20px 40px rgba(32, 71, 133, 0.08);
@@ -228,19 +233,88 @@ button:active {
 .resultado-clima h2 {
     margin-bottom: 16px;
     font-size: 2rem;
+    color: var(--cor5);
 }
 
 .resultado-clima p {
+    background: var(--cor4);
     margin-bottom: 12px;
+    color: var(--cor5);
     font-size: 1rem;
     line-height: 1.7;
+}
+
+.card-temperatura {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--cor3);
+    padding: 18px 22px;
+    border-radius: 18px;
+    color: var(--cor5);
+
+}
+
+.temp-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.temp-valor {
+    font-size: 1.8rem;
+    font-weight: 700;
+
+}
+
+.temp-descricao {
+    font-size: 1.05rem;
+    color: var(--cor5);
+}
+
+.label-detalhe {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cor5);
+}
+
+.valor-detalhe {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--cor5);
+}
+
+.icone-temp {
+    font-size: 2.8rem;
+}
+
+.resultado-clima .card-temperatura {
+    background: var(--cor3);
+    border: 1px solid rgba(19, 104, 210, 0.15);
+}
+
+.cards-detalhes {
+    display: flex;
+    gap: 18px;
+    margin-top: 22px;
+}
+.card-detalhe {
+    flex: 1;
+    background: var(--cor3);
+    border-radius: 18px;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
 footer {
     width: 100%;
     text-align: center;
     padding-top: 14px;
-    color: rgba(19, 34, 64, 0.7);
+    color: var(--cor4);
     font-size: 0.95rem;
 }
 

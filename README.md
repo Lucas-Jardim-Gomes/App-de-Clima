@@ -28,6 +28,9 @@ O projeto também inclui tratamento de erros, garantindo que entradas inválidas
 ## 📸 Preview
 ![Screenshot do App Clima](assets/tela-home-clima.png)
 
+## 📌 Status do projeto
+Em desenvolvimento
+
 ## 💻 Instalação
 Para rodar o projeto localmente:
 
